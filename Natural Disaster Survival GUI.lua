@@ -1,7 +1,8 @@
 --[[
-specific scripts in this GUI found here -  https://v3rmillion.net/showthread.php?tid=809402 and https://v3rmillion.net/showthread.php?tid=709985.
+specific scripts in this GUI found here: https://v3rmillion.net/showthread.php?tid=809402, https://v3rmillion.net/showthread.php?tid=709985.
 Natural Disaster Survival GUI made by duck0#0415.
-and yes I obfuscated it so no one can mess with the source especially once I make this gui bigger than it is now. i will always credit the source of where i got the specific scripts from, here.
+yes, I obfuscated it so no one can mess with the source especially once I make this gui bigger than it is now. i will always credit the source of where i got the specific scripts from.
+alternative pastebin link: loadstring(game:HttpGet("https://pastebin.com/raw/h30Wpg2N", true))()
 ]]--
 --[[
  ___       __   ________  ___       ___           ___    ___ ________  _______   ________  ___  ___  ________  _______        _________  _____ ______           
