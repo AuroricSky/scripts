@@ -1,2 +1,2 @@
 # guis
-this is an easy place to access all my GUI projects.
+this is an easy place to access all my GUI's.
