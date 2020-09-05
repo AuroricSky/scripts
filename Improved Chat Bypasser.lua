@@ -9,7 +9,7 @@ setreadonly(meta, false);
 meta.__namecall = newcclosure(function(...)
 local method = getnamecallmethod();
 local args = {...}; --please don't get offended by the words below, its for everyone to be a piece of shit to other people on a kids platform, i don't affiliate with any of the racist/very offensive words below. just basic ones lol.
-local replacetext = {"nigger", "faggot", "thot", "bitch", "cunt", "fuck", "fucker", "whore", "dick", "penis", "asshole", "allahu", "akbar", "crap", "shit", "motherfucker", "girlfriend", "boyfriend", "slave", "hoe", "sex",  "cum", "pussy", "nigga", "slut", "rape", "allah", "hitler", "nazi", "kill the jews", "suicide", "kill", "gay", "lmao", "suck", "daddy"} --adding more words as i encounter flaws within the bypasser.
+local replacetext = {"nigger", "faggot", "thot", "bitch", "cunt", "fuck", "fucker", "whore", "dick", "penis", "asshole", "allahu", "akbar", "crap", "shit", "motherfucker", "girlfriend", "boyfriend", "slave", "hoe", "sex",  "cum", "pussy", "nigga", "slut", "rape", "allah", "hitler", "nazi", "kill the jews", "suicide", "kill", "gay", "lmao", "suck", "daddy", "boobs", "breast", "vagina", "anal", "cock"} --adding more words as i encounter flaws within the bypasser.
 local replacedtext = ""
 
 if method == 'FireServer' and args[1].Name == 'SayMessageRequest' then
