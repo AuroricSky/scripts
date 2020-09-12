@@ -1,6 +1,7 @@
 --// simpleCheats GUI by @duck0#0415.
 --// alternative pastebin loadstring: loadstring(game:HttpGet("https://pastebin.com/raw/cUvMssVP", true))()
---// updated as of: 8/10/20. huge ui overhaul and more features coming.
+--// updated as of: 9/12/20. huge ui overhaul and more features coming.
+
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local title = Instance.new("TextLabel")
@@ -39,7 +40,7 @@ title.BackgroundColor3 = Color3.fromRGB(0, 170, 127)
 title.Position = UDim2.new(0.108635098, 0, -4.85712953e-05, 0)
 title.Size = UDim2.new(0, 280, 0, 35)
 title.Font = Enum.Font.SciFi
-title.Text = "simpleCheats by ducko#0415"
+title.Text = "simpleCheats by duck0#0415"
 title.TextColor3 = Color3.fromRGB(0, 0, 0)
 title.TextScaled = true
 title.TextSize = 25.000
