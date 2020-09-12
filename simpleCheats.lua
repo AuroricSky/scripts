@@ -1,6 +1,6 @@
 --// simpleCheats GUI by @ducko#0415.
 --// alternative pastebin loadstring: loadstring(game:HttpGet("https://pastebin.com/raw/cUvMssVP", true))()
---// updated as of: 8/10/20.
+--// updated as of: 8/10/20. huge ui overhaul and more features coming.
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local title = Instance.new("TextLabel")
