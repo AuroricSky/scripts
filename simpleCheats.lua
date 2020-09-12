@@ -1,4 +1,4 @@
---// simpleCheats GUI by @ducko#0415.
+--// simpleCheats GUI by @duck0#0415.
 --// alternative pastebin loadstring: loadstring(game:HttpGet("https://pastebin.com/raw/cUvMssVP", true))()
 --// updated as of: 8/10/20. huge ui overhaul and more features coming.
 local ScreenGui = Instance.new("ScreenGui")
@@ -490,4 +490,4 @@ tpctrl.Font = Enum.Font.SourceSans
 tpctrl.Text = "Ctrl-Click TP -  Left CTRL."
 tpctrl.TextColor3 = Color3.fromRGB(0, 0, 0)
 tpctrl.TextSize = 14.000
-print ('simpleCheats by ducko#0415 Loaded')
+print ('simpleCheats by duck0#0415 Loaded')
