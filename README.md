@@ -1,2 +1,4 @@
-# guis
-this is an easy place to access all my GUI's.
+# scripts
+--
+this is an easy place to access all my script's.
+--
