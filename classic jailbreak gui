@@ -1,5 +1,7 @@
 repeat wait() until game:IsLoaded()
 
+if game.GameId == 3369999517 then
+
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(
     function(State)
         if State == Enum.TeleportState.Started then
@@ -188,7 +190,7 @@ Page2.Button(
             credits = function(self)
                 UI.Banner(
                     {
-                        Text = "UI library - aKinlei#5790.                                                   scripts - duck0#0415."
+                        Text = "UI library - aKinlei#5790.                                                   Scripts - duck0#0415."
                     }
                 )
             end
@@ -211,17 +213,18 @@ Page2.Button(
         Text = "more features coming someday",
         Callback = function()
             local player = game.Players.LocalPlayer
-            player:Kick("uh :(")
+            player:Kick("dont ask when lol")
         end,
         Enabled = true,
         Menu = {
             notice = function(self)
                 UI.Banner(
                     {
-                        Text = "dont click me, im saving you - a message from the gods"
-                    }
-                )
-            end
-        }
-    }
-)
+                         Text = "dont click me, im saving you - a message from the gods"
+                     }
+                 )
+             end
+          }
+       }
+    )  
+end
