@@ -168,7 +168,7 @@ Page2.Button(
             credits = function(self)
                 UI.Banner(
                     {
-                        Text = "UI library - aKinlei#5790.                                                   GUI and scripts - duck0#0415."
+                        Text = "UI library - aKinlei#5790.                                                   scripts - duck0#0415."
                     }
                 )
             end
