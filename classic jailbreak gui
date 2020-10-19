@@ -5,15 +5,20 @@ game:GetService("Players").LocalPlayer.OnTeleport:Connect(
         if State == Enum.TeleportState.Started then
             syn.queue_on_teleport(
                 "loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/classic%20jailbreak%20gui'))()"
-            )
-        end
+                )
+            else
+                queue_on_teleport(
+                "loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/classic%20jailbreak%20gui'))()" 
+                )
+         end
     end
 )
+
 local TeleportService = game:GetService("TeleportService")
-game.Players.PlayerRemoving:Connect(
-    function(LP)
-        if LP == game.Players.LocalPlayer then
-            TeleportService:Teleport(game.PlaceId)
+  game.Players.PlayerRemoving:Connect(
+     function(LP)
+         if LP == game.Players.LocalPlayer then
+            TeleportService:Teleport(game.PlaceId,LP)
         end
     end
 )
