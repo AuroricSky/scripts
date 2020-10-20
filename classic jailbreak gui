@@ -1,228 +1,229 @@
-repeat wait() until game:IsLoaded()
+repeat
+    wait()
+until game:IsLoaded()
 
 if game.PlaceId == 3369999517 then
-
-if syn then
-    
-game:GetService("Players").LocalPlayer.OnTeleport:Connect(
-    function(State)
-        if State == Enum.TeleportState.Started then
-            syn.queue_on_teleport(
-                "loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/classic%20jailbreak%20gui'))()"
-                )
+    if syn then
+        game:GetService("Players").LocalPlayer.OnTeleport:Connect(
+            function(State)
+                if State == Enum.TeleportState.Started then
+                    syn.queue_on_teleport(
+                        "loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/classic%20jailbreak%20gui'))()"
+                    )
+                end
             end
-       end
-    )
-end
-local TeleportService = game:GetService("TeleportService")
-  game.Players.PlayerRemoving:Connect(
-     function(LP)
-         if LP == game.Players.LocalPlayer then
-            TeleportService:Teleport(game.PlaceId,LP)
-        end
+        )
     end
-)
-
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
-
-local UI =
-    Material.Load(
-    {
-        Title = "classic jailbreak cheaties",
-        Style = 3,
-        SizeX = 300,
-        SizeY = 250,
-        Theme = "Dark"
-    }
-)
-
-local Page =
-    UI.New(
-    {
-        Title = "Main"
-    }
-)
-
-local Page2 =
-    UI.New(
-    {
-        Title = "Misc"
-    }
-)
-
-Page.Button(
-    {
-        Text = "get keycard",
-        Callback = function()
-            local Event = game:GetService("ReplicatedStorage").PickPocket
-            Event:FireServer()
-        end
-    }
-)
-
-Page.Button(
-    {
-        Text = "autorob bank",
-        Callback = function()
-            _G.Enabled = true
-            wait()
-            while _G.Enabled do
-                wait(0.1)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                    CFrame.new(
-                    19.4773006,
-                    1.36562705,
-                    815.920471,
-                    -0.0709127188,
-                    3.95913951e-08,
-                    -0.997482538,
-                    4.56786253e-08,
-                    1,
-                    3.64439465e-08,
-                    0.997482538,
-                    -4.29792912e-08,
-                    -0.0709127188
-                )
-                wait(11)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                    CFrame.new(
-                    14.4456205,
-                    18.6564999,
-                    797.091797,
-                    -0.999281466,
-                    -4.18706385e-08,
-                    -0.0379025638,
-                    -4.29467519e-08,
-                    1,
-                    2.7577407e-08,
-                    0.0379025638,
-                    2.9185383e-08,
-                    -0.999281466
-                )
+    local TeleportService = game:GetService("TeleportService")
+    game.Players.PlayerRemoving:Connect(
+        function(LP)
+            if LP == game.Players.LocalPlayer then
+                TeleportService:Teleport(game.PlaceId, LP)
             end
         end
-    }
-)
+    )
 
-Page.Button(
-    {
-        Text = "stop bank autorob",
-        Callback = function()
-            _G.Enabled = false
-            game.StarterGui:SetCore(
-                "SendNotification",
-                {
-                    Title = "Notice",
-                    Text = "when 1k is collected and it will tp you at the door and stop the loop and give the money",
-                    Duration = 3
-                }
-            )
-            wait()
-        end
-    }
-)
+    local Material =
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
-Page.Button(
-    {
-        Text = "bank tp",
-        Callback = function()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                CFrame.new(
-                24.9789734,
-                18.7556267,
-                813.028442,
-                -0.942355812,
-                8.49950865e-09,
-                0.334612519,
-                3.79095588e-10,
-                1,
-                -2.43334153e-08,
-                -0.334612519,
-                -2.2803885e-08,
-                -0.942355812
-            )
-        end
-    }
-)
+    local UI =
+        Material.Load(
+        {
+            Title = "classic jailbreak cheaties",
+            Style = 3,
+            SizeX = 300,
+            SizeY = 250,
+            Theme = "Dark"
+        }
+    )
 
-Page.Button(
-    {
-        Text = "city base tp",
-        Callback = function()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                CFrame.new(
-                -232.495224,
-                18.2656708,
-                1608.96802,
-                0.947197735,
-                -2.08072004e-09,
-                -0.320649624,
-                1.65771343e-08,
-                1,
-                4.24797051e-08,
-                0.320649624,
-                -4.5552131e-08,
-                0.947197735
-            )
-        end
-    }
-)
+    local Page =
+        UI.New(
+        {
+            Title = "Main"
+        }
+    )
 
-Page.Button(
-    {
-        Text = "rejoin game",
-        Callback = function()
-           game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
-        end
-    }
-)
+    local Page2 =
+        UI.New(
+        {
+            Title = "Misc"
+        }
+    )
 
-Page2.Button(
-    {
-        Text = "credits",
-        Callback = function()
-            print("clicked")
-        end,
-        Enabled = true,
-        Menu = {
-            credits = function(self)
-                UI.Banner(
+    Page.Button(
+        {
+            Text = "get keycard",
+            Callback = function()
+                local Event = game:GetService("ReplicatedStorage").PickPocket
+                Event:FireServer()
+            end
+        }
+    )
+
+    Page.Button(
+        {
+            Text = "autorob bank",
+            Callback = function()
+                _G.Enabled = true
+                wait()
+                while _G.Enabled do
+                    wait(0.1)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                        CFrame.new(
+                        19.4773006,
+                        1.36562705,
+                        815.920471,
+                        -0.0709127188,
+                        3.95913951e-08,
+                        -0.997482538,
+                        4.56786253e-08,
+                        1,
+                        3.64439465e-08,
+                        0.997482538,
+                        -4.29792912e-08,
+                        -0.0709127188
+                    )
+                    wait(11)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                        CFrame.new(
+                        14.4456205,
+                        18.6564999,
+                        797.091797,
+                        -0.999281466,
+                        -4.18706385e-08,
+                        -0.0379025638,
+                        -4.29467519e-08,
+                        1,
+                        2.7577407e-08,
+                        0.0379025638,
+                        2.9185383e-08,
+                        -0.999281466
+                    )
+                end
+            end
+        }
+    )
+
+    Page.Button(
+        {
+            Text = "stop bank autorob",
+            Callback = function()
+                _G.Enabled = false
+                game.StarterGui:SetCore(
+                    "SendNotification",
                     {
-                        Text = "UI library - aKinlei#5790.                                                   Scripts - duck0#0415."
+                        Title = "Notice",
+                        Text = "when 1k is collected and it will tp you at the door and stop the loop and give the money",
+                        Duration = 3
                     }
+                )
+                wait()
+            end
+        }
+    )
+
+    Page.Button(
+        {
+            Text = "bank tp",
+            Callback = function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    CFrame.new(
+                    24.9789734,
+                    18.7556267,
+                    813.028442,
+                    -0.942355812,
+                    8.49950865e-09,
+                    0.334612519,
+                    3.79095588e-10,
+                    1,
+                    -2.43334153e-08,
+                    -0.334612519,
+                    -2.2803885e-08,
+                    -0.942355812
                 )
             end
         }
-    }
-)
+    )
 
-Page2.Button(
-    {
-        Text = "copy discord invite for more releases",
-        Callback = function()
-            local copy = setclipboard or clipboard.set or copystring or syn.write_clipboard
-            copy("https://discord.gg/SfSVWBE")
-        end
-    }
-)
+    Page.Button(
+        {
+            Text = "city base tp",
+            Callback = function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    CFrame.new(
+                    -232.495224,
+                    18.2656708,
+                    1608.96802,
+                    0.947197735,
+                    -2.08072004e-09,
+                    -0.320649624,
+                    1.65771343e-08,
+                    1,
+                    4.24797051e-08,
+                    0.320649624,
+                    -4.5552131e-08,
+                    0.947197735
+                )
+            end
+        }
+    )
 
-Page2.Button(
-    {
-        Text = "more features coming someday",
-        Callback = function()
-            local player = game.Players.LocalPlayer
-            player:Kick("dont ask when lol")
-        end,
-        Enabled = true,
-        Menu = {
-            notice = function(self)
-                UI.Banner(
-                    {
-                         Text = "dont click me, im saving you - a message from the gods"
-                     }
-                 )
-             end
-          }
-       }
-    )  
+    Page.Button(
+        {
+            Text = "rejoin game",
+            Callback = function()
+                game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+            end
+        }
+    )
+
+    Page2.Button(
+        {
+            Text = "credits",
+            Callback = function()
+                print("clicked")
+            end,
+            Enabled = true,
+            Menu = {
+                credits = function(self)
+                    UI.Banner(
+                        {
+                            Text = "UI library - aKinlei#5790.                                                   Scripts - duck0#0415."
+                        }
+                    )
+                end
+            }
+        }
+    )
+
+    Page2.Button(
+        {
+            Text = "copy discord invite for more releases",
+            Callback = function()
+                local copy = setclipboard or clipboard.set or copystring or syn.write_clipboard
+                copy("https://discord.gg/SfSVWBE")
+            end
+        }
+    )
+
+    Page2.Button(
+        {
+            Text = "more features coming someday",
+            Callback = function()
+                local player = game.Players.LocalPlayer
+                player:Kick("dont ask when lol")
+            end,
+            Enabled = true,
+            Menu = {
+                notice = function(self)
+                    UI.Banner(
+                        {
+                            Text = "dont click me, im saving you - a message from the gods"
+                        }
+                    )
+                end
+            }
+        }
+    )
 end
