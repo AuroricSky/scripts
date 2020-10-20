@@ -14,44 +14,36 @@ if game.PlaceId == 3369999517 then
             end
         )
     end
-    local TeleportService = game:GetService("TeleportService")
-    game.Players.PlayerRemoving:Connect(
-        function(LP)
-            if LP == game.Players.LocalPlayer then
-                TeleportService:Teleport(game.PlaceId, LP)
-            end
-        end
-    )
+    
+local Material =
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
-    local Material =
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
-
-    local UI =
-        Material.Load(
-        {
-            Title = "classic jailbreak cheaties",
-            Style = 3,
-            SizeX = 300,
-            SizeY = 250,
-            Theme = "Dark"
+local UI =
+    Material.Load(
+    {
+        Title = "classic jailbreak cheaties",
+        Style = 3,
+        SizeX = 300,
+        SizeY = 250,
+        Theme = "Dark"
         }
     )
 
-    local Page =
-        UI.New(
+local Page =
+    UI.New(
         {
             Title = "Main"
         }
     )
 
-    local Page2 =
-        UI.New(
+local Page2 =
+    UI.New(
         {
             Title = "Misc"
         }
     )
 
-    Page.Button(
+Page.Button(
         {
             Text = "get keycard",
             Callback = function()
@@ -61,7 +53,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page.Button(
+Page.Button(
         {
             Text = "autorob bank",
             Callback = function()
@@ -105,7 +97,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page.Button(
+Page.Button(
         {
             Text = "stop bank autorob",
             Callback = function()
@@ -123,7 +115,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page.Button(
+Page.Button(
         {
             Text = "bank tp",
             Callback = function()
@@ -146,7 +138,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page.Button(
+Page.Button(
         {
             Text = "city base tp",
             Callback = function()
@@ -169,7 +161,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page.Button(
+Page.Button(
         {
             Text = "rejoin game",
             Callback = function()
@@ -178,7 +170,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page2.Button(
+Page2.Button(
         {
             Text = "credits",
             Callback = function()
@@ -197,7 +189,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page2.Button(
+Page2.Button(
         {
             Text = "copy discord invite for more releases",
             Callback = function()
@@ -207,7 +199,7 @@ if game.PlaceId == 3369999517 then
         }
     )
 
-    Page2.Button(
+Page2.Button(
         {
             Text = "more features coming someday",
             Callback = function()
