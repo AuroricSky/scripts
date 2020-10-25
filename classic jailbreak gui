@@ -39,6 +39,13 @@ local Page =
 local Page2 =
     UI.New(
         {
+            Title = "More Teleports"
+        }
+    )
+
+local Page3 =
+    UI.New(
+        {
             Title = "Misc"
         }
     )
@@ -47,8 +54,7 @@ Page.Button(
         {
             Text = "get keycard",
             Callback = function()
-                local Event = game:GetService("ReplicatedStorage").PickPocket
-                Event:FireServer()
+                game:GetService("ReplicatedStorage").PickPocket:FireServer()
             end
         }
     )
@@ -99,15 +105,15 @@ Page.Button(
 
 Page.Button(
         {
-            Text = "stop bank autorob",
+            Text = "disable bank autorob",
             Callback = function()
                 _G.Enabled = false
                 game.StarterGui:SetCore(
                     "SendNotification",
                     {
                         Title = "Notice",
-                        Text = "when 1k is collected and it will tp you at the door and stop the loop and give the money",
-                        Duration = 3
+                        Text = "wait till its finished collecting money",
+                        Duration = 2
                     }
                 )
                 wait()
@@ -117,46 +123,18 @@ Page.Button(
 
 Page.Button(
         {
-            Text = "bank tp",
+            Text = "bank",
             Callback = function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                    CFrame.new(
-                    24.9789734,
-                    18.7556267,
-                    813.028442,
-                    -0.942355812,
-                    8.49950865e-09,
-                    0.334612519,
-                    3.79095588e-10,
-                    1,
-                    -2.43334153e-08,
-                    -0.334612519,
-                    -2.2803885e-08,
-                    -0.942355812
-                )
+                game.workspace.Teleports.Bank.Teleport.RemoteFunction:InvokeServer()
             end
         }
     )
 
 Page.Button(
         {
-            Text = "city base tp",
+            Text = "criminal base - for guns",
             Callback = function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                    CFrame.new(
-                    -232.495224,
-                    18.2656708,
-                    1608.96802,
-                    0.947197735,
-                    -2.08072004e-09,
-                    -0.320649624,
-                    1.65771343e-08,
-                    1,
-                    4.24797051e-08,
-                    0.320649624,
-                    -4.5552131e-08,
-                    0.947197735
-                )
+                game.workspace.Teleports.Crim.Teleport.RemoteFunction:InvokeServer()
             end
         }
     )
@@ -172,50 +150,79 @@ Page.Button(
 
 Page2.Button(
         {
-            Text = "credits",
+            Text = "Prison",
             Callback = function()
-                print("clicked")
-            end,
-            Enabled = true,
-            Menu = {
-                credits = function(self)
-                    UI.Banner(
-                        {
-                            Text = "UI library - aKinlei#5790.                                                   Scripts - duck0#0415."
-                        }
-                    )
-                end
-            }
-        }
-    )
-
-Page2.Button(
-        {
-            Text = "copy discord invite for more releases",
-            Callback = function()
-                local copy = setclipboard or clipboard.set or copystring or syn.write_clipboard
-                copy("https://discord.gg/SfSVWBE")
+                game.workspace.Teleports.Prison.Teleport.RemoteFunction:InvokeServer()
             end
         }
     )
 
 Page2.Button(
         {
+            Text = "Town",
+            Callback = function()
+                game.workspace.Teleports.Town.Teleport.RemoteFunction:InvokeServer()
+            end
+        }
+    )
+
+Page2.Button(
+        {
+            Text = "Garage",
+            Callback = function()
+                game.workspace.Teleports.Garage.Teleport.RemoteFunction:InvokeServer()
+            end
+        }
+    )
+
+Page2.Button(
+        {
+            Text = "Police Station",
+            Callback = function()
+                game.workspace.Teleports.Police.Teleport.RemoteFunction:InvokeServer()
+            end
+        }
+    )
+
+Page3.Button(
+        {
+            Text = "credits",
+            Callback = function()
+            game.StarterGui:SetCore(
+                "SendNotification",
+                {
+                    Title = "credits",
+                    Text = "UI library - aKinlei#5790. Scripts - duck0#0415.",
+                    Duration = 5
+                }
+            )
+            end
+        }
+    )
+
+Page3.Button(
+        {
+            Text = "copy discord invite for more releases",
+            Callback = function()
+                local copy = setclipboard or clipboard.set or copystring or syn.write_clipboard
+                copy("https://discord.io/duck0")
+            end
+        }
+    )
+
+Page3.Button(
+        {
             Text = "more features coming someday",
             Callback = function()
-                local player = game.Players.LocalPlayer
-                player:Kick("dont ask when lol")
-            end,
-            Enabled = true,
-            Menu = {
-                notice = function(self)
-                    UI.Banner(
-                        {
-                            Text = "dont click me, im saving you - a message from the gods"
-                        }
-                    )
-                end
-            }
+            game.StarterGui:SetCore(
+                "SendNotification",
+                {
+                    Title = "bruh",
+                    Text = "dont ask when",
+                    Duration = 1
+                }
+            )
+            end
         }
     )
 end
