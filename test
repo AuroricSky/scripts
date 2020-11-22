@@ -1,1 +1,8 @@
-firetouchinterest(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").TopSection.Hallway.RewardDoor, 0)
+firetouchinterest(game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, game:GetService('Workspace').TopSection.Hallway.RewardDoor, 0)
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+    if State == Enum.TeleportState.Started then
+        syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/test')")
+    end
+end)
+
+game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
