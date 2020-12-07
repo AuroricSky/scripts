@@ -117,12 +117,12 @@ local function GoToNew()
                 if syn then
                     syn.queue_on_teleport(
                         crossServerSettings ..
-                            " "
+                            " loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/jailbricked%20new%20hashes'))()"
                     )
                 else
                     queue_on_teleport(
                         crossServerSettings ..
-                            " "
+                            " loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/jailbricked%20new%20hashes'))()"
                     )
                 end
             end
