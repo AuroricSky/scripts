@@ -1,18 +1,20 @@
-repeat wait() until game:IsLoaded()
+repeat wait() 
+  until 
+game:IsLoaded()
 local meta, old = getrawmetatable(game), {}
-for i, v in next, meta do
-old[i] = v
+  for i, v in next, meta do
+  old[i] = v
 end
-local char = "ٓﾞ" -- updating this every now and then.
-setreadonly(meta, false)
-meta.__namecall =
-newcclosure(
+local char = "أۘۘ" -- updating this every now and then.
+  setreadonly(meta, false)
+    meta.__namecall =
+  newcclosure(
 function(...)
 local method = getnamecallmethod()
 local args = {...}
 local replacetext = 
-{ -- the words, you can copy this source and add more if you like.
-  "nigger", -- of course this is the first one lmao.
+{ -- you can add more by copying the source.
+  "nigger",
   "faggot",
   "thot",
   "bitch",
@@ -54,7 +56,7 @@ local replacetext =
   "anal",
   "cock",
   "discord",
-  "condo"
+  "condo",
 }
 local replacedtext = ""
 if method == "FireServer" and args[1].Name == "SayMessageRequest" then
@@ -65,7 +67,7 @@ if method == "FireServer" and args[1].Name == "SayMessageRequest" then
             replacetext[count],
                ".",
                   function(c)
-                     return c .. char
+                    return c .. char
                      end
                     )
                   args[2] = string.gsub(args[2], replacetext[count], replacedtext)
@@ -77,10 +79,11 @@ if method == "FireServer" and args[1].Name == "SayMessageRequest" then
   end
 )
 setreadonly(meta, true)
-game.StarterGui:SetCore("SendNotification",
-   {
-    Title = "chat bypasser",
-    Text = "loaded. made by Cole#4200, modified by duck0#0415.",
-    Duration = 5.0
-   }
+game.StarterGui:SetCore
+("SendNotification",
+{
+  Title = "chat bypasser",
+  Text = "loaded. made by Cole#4200, modified by duck0#0415.",
+  Duration = 5
+}
 )
