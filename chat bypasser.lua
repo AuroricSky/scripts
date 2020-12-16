@@ -56,7 +56,7 @@ local replacetext =
   "anal",
   "cock",
   "discord",
-  "condo",
+  "condo"
 }
 local replacedtext = ""
 if method == "FireServer" and args[1].Name == "SayMessageRequest" then
@@ -78,12 +78,5 @@ if method == "FireServer" and args[1].Name == "SayMessageRequest" then
      return old.__namecall(...)
   end
 )
-setreadonly(meta, true)
-game.StarterGui:SetCore
-("SendNotification",
-{
-  Title = "chat bypasser",
-  Text = "loaded. made by Cole#4200, modified by duck0#0415.",
-  Duration = 5
-}
-)
+ setreadonly(meta, true)
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "chat bypasser", Text = "loaded. made by Cole#4200, modified by duck0#0415.", Duration = 5})
