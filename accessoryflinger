@@ -1,0 +1,109 @@
+-- wear three or more hats/accessories (using accessory override advanced settings in avatar editor), and use R6. only works in games with character collision on.
+-- example games this would work on: https://www.roblox.com/games/155615604/ , https://www.roblox.com/games/12109643/
+
+noclip = true
+game:GetService("RunService").Stepped:Connect(function()
+    if noclip then
+        game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+    end
+end)
+
+Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+
+Mouse.KeyDown:connect(function(key)
+    if key == "e" then
+        noclip = not noclip
+        game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+    end
+end)
+
+Mouse.KeyDown:connect(function(key)
+    if key == "r" then
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+    end
+end)
+
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+    if State == Enum.TeleportState.Started then
+        if (syn and "Synapse") then
+            syn.queue_on_teleport("")
+        elseif not (syn and "Synapse") then 
+            queue_on_teleport("")
+        end
+    end
+end)
+
+setclipboard("discord.io/duck0")
+
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Press E to toggle noclip/ Press R to rejoin server.", Color = Color3.fromRGB(18, 238, 212)})
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Discord copied for support. Originally by eringj, modified by duck0.", Color = Color3.fromRGB(114, 137, 218)})
+
+wait(.5)
+
+spawn(function()
+     while true do
+         game:GetService("RunService").Heartbeat:wait()
+             for i, v in pairs(game.Players:GetPlayers()) do
+                 if v == game.Players.LocalPlayer == false then
+                 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge) * math.huge
+                     game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge, math.huge) * math.huge
+                     v.MaximumSimulationRadius = 0
+                     v.SimulationRadius = 0
+                 game:GetService("RunService").Stepped:wait()
+            end
+        end
+    end
+end)
+
+local Player = game:GetService("Players").LocalPlayer
+local Players = game:GetService("Players")
+local HatList = {}
+local i = 0
+for _, l in pairs(Player.Character:GetChildren()) do
+    if l:IsA("Accessory") then
+        if i > 0 then
+            l.Parent = workspace
+        end
+        i = i + 1
+    end
+end
+
+wait(.1)
+
+for _, v in pairs(workspace:GetDescendants()) do
+    if v.Name == "Handle" and v:IsA("BasePart") and v.Parent:IsA("Accessory") and
+        v:IsDescendantOf(Player.Character) == false and
+        Players:GetPlayerFromCharacter(v.Parent.Parent) == nil
+        then
+        table.insert(HatList, v)
+    end
+end
+
+for _, hat in pairs(HatList) do
+hat.Parent = workspace
+hat.Position = Player.Character.HumanoidRootPart.Position + Player.Character.HumanoidRootPart.CFrame.lookVector * 5
+local BodyPos = Instance.new("BodyPosition", hat)
+local BodyAng = Instance.new("BodyAngularVelocity", hat)
+BodyAng.AngularVelocity = Vector3.new(0, 9e12, 0)
+BodyAng.P = 9e12
+BodyPos.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+BodyPos.P = 9e8
+spawn(function()
+    while wait() do
+        if pcall(function()
+            hat.CanCollide = false
+            BodyPos.Position = Player.Character.HumanoidRootPart.Position + Vector3.new(math.random(-2, 2), math.random(-2, 2), math.random(-2, 2))
+                 end)
+             then
+             else
+                 BodyPos:Destroy()
+                 hat.CanCollide = true
+             end
+         end
+    end)
+end
+
+wait(.5)
+
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Walk around on your accessories and they should start flying around you.", Color = Color3.fromRGB(30, 144, 255)})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "requirements", Text = "Avatar must be R6, game must have collisions on, and wear a lot of accessories. if accessories don't fly: rejoin and try again.", Duration = 1200, Button1 = "OK"})
