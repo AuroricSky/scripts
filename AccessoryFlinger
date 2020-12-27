@@ -22,14 +22,20 @@ Mouse.KeyDown:connect(function(key)
     end
 end)
 
-syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger'))()")
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+    if State == Enum.TeleportState.Started then
+        syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger'))()")
+    end
+end)
+
 setclipboard("discord.io/duck0")
 
-game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Press E to toggle noclip/ Press R to rejoin server.", Color = Color3.fromRGB(18, 238, 212)})
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Discord copied for support. Originally by eringj, modified by duck0.", Color = Color3.fromRGB(114, 137, 218)})
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Walk around on your accessories/hats and they should start flying around you.", Color = Color3.fromRGB(30, 144, 255)})
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Press E to toggle noclip/ Press R to rejoin server.", Color = Color3.fromRGB(18, 238, 212)})
 wait(2)
-game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Walk around on your accessories and they should start flying around you.", Color = Color3.fromRGB(30, 144, 255)})
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "requirements", Text = "Avatar must be R6, game must have collisions on, and wear a lot of accessories. if accessories don't fly: rejoin and try again.", Duration = 1200, Button1 = "OK"})
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "if accessories don't fly: rejoin and try again.", Color = Color3.fromRGB(255, 89, 89)})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "requirements", Text = "Avatar must be R6, game must have collisions on, and wear a lot of accessories.", Duration = 1200, Button1 = "OK"})
 
 spawn(function()
      while true do
