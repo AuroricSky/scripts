@@ -1,4 +1,4 @@
--- auto-updating loadstring: loadstring(game:HttpGet("https://raw.githubusercontent.com/du3ko/scripts/master/chat%20bypasser.lua"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/du3ko/scripts/master/chat%20bypasser.lua"))()
 repeat wait() 
   until 
 game:IsLoaded()
