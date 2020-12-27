@@ -1,4 +1,4 @@
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/du3ko/scripts/master/accessoryflinger"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger"))()
 
 noclip = true
 game:GetService("RunService").Stepped:Connect(function()
@@ -22,23 +22,12 @@ Mouse.KeyDown:connect(function(key)
     end
 end)
 
-game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
-    if State == Enum.TeleportState.Started then
-        if (syn and "Synapse") then
-            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/accessoryflinger'))()")
-        elseif not (syn and "Synapse") then 
-            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/accessoryflinger'))()")
-        end
-    end
-end)
-
+syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger'))()")
 setclipboard("discord.io/duck0")
 
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Press E to toggle noclip/ Press R to rejoin server.", Color = Color3.fromRGB(18, 238, 212)})
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Discord copied for support. Originally by eringj, modified by duck0.", Color = Color3.fromRGB(114, 137, 218)})
-
 wait(2)
-
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "Walk around on your accessories and they should start flying around you.", Color = Color3.fromRGB(30, 144, 255)})
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "requirements", Text = "Avatar must be R6, game must have collisions on, and wear a lot of accessories. if accessories don't fly: rejoin and try again.", Duration = 1200, Button1 = "OK"})
 
