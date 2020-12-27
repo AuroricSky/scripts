@@ -1,6 +1,6 @@
 # scripts
 --
-this is an easy place to find all my scripts.
+hello! this is an easy place to find all my scripts.
 --
-https://github.com/du3ko/script-pack , my script pack.
+cool script pack: https://github.com/du3ko/script-pack
 --
