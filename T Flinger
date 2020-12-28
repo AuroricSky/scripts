@@ -1,0 +1,64 @@
+-- backup fling, use this: loadstring(game:HttpGet("https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger"))()
+wait(2)
+spawn(function()
+     while true do
+         game:GetService("RunService").Heartbeat:wait()
+             for i, v in pairs(game.Players:GetPlayers()) do
+                 if v == game.Players.LocalPlayer == false then
+                 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge, math.huge) * math.huge
+                     game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge, math.huge) * math.huge
+                     v.MaximumSimulationRadius = 0
+                     v.SimulationRadius = 0
+                 game:GetService("RunService").Stepped:wait()
+            end
+        end
+    end
+end)
+
+local Player = game:GetService("Players").LocalPlayer
+local Players = game:GetService("Players")
+local HatList = {}
+local i = 0
+for _, l in pairs(Player.Character:GetChildren()) do
+    if l:IsA("Accessory") then
+        if i > 0 then
+            l.Parent = workspace
+        end
+        i = i + 1
+    end
+end
+
+wait(.1)
+
+for _, v in pairs(workspace:GetDescendants()) do
+    if v.Name == "Handle" and v:IsA("BasePart") and v.Parent:IsA("Accessory") and
+        v:IsDescendantOf(Player.Character) == false and
+        Players:GetPlayerFromCharacter(v.Parent.Parent) == nil
+        then
+        table.insert(HatList, v)
+    end
+end
+
+for _, hat in pairs(HatList) do
+hat.Parent = workspace
+hat.Position = Player.Character.HumanoidRootPart.Position + Player.Character.HumanoidRootPart.CFrame.lookVector * 5
+local BodyPos = Instance.new("BodyPosition", hat)
+local BodyAng = Instance.new("BodyAngularVelocity", hat)
+BodyAng.AngularVelocity = Vector3.new(0, 9e12, 0)
+BodyAng.P = 9e12
+BodyPos.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+BodyPos.P = 9e8
+spawn(function()
+    while wait() do
+        if pcall(function()
+            hat.CanCollide = false
+            BodyPos.Position = Player.Character.HumanoidRootPart.Position + Vector3.new(math.random(-2, 2), math.random(-2, 2), math.random(-2, 2))
+                 end)
+             then
+             else
+                 BodyPos:Destroy()
+                 hat.CanCollide = true
+             end
+         end
+    end)
+end
