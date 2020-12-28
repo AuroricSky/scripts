@@ -21,12 +21,11 @@ end)
 Mouse.KeyDown:connect(function(key)
     if key == "r" then
         game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
-    end
-end)
-
-game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
-    if State == Enum.TeleportState.Started then
-        syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger'))()")
+            game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+                if State == Enum.TeleportState.Started then
+               syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger'))()")
+           end
+       end)
     end
 end)
 
