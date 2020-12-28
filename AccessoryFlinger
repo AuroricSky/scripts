@@ -1,5 +1,7 @@
 -- loadstring(game:HttpGet("https://raw.githubusercontent.com/du3ko/scripts/master/AccessoryFlinger"))()
 
+repeat wait() until game:IsLoaded()
+
 noclip = true
 game:GetService("RunService").Stepped:Connect(function()
     if noclip then
