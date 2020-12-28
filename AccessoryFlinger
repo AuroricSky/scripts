@@ -43,7 +43,7 @@ game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "discord 
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {Text = "keybinds: E to toggle noclip, R to rejoin server.", Color = Color3.fromRGB(18, 238, 212)})
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "requirements", Text = "avatar must be R6, game must have collisions on, and wear a lot of accessories.", Duration = 1200, Button1 = "OK"})
 
-wait(2)
+wait(1)
 spawn(function()
      while true do
          game:GetService("RunService").Heartbeat:wait()
