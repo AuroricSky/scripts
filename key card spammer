@@ -1,9 +1,0 @@
-while wait(.1) do
-local args = {
-    [1] = workspace.Prison_ITEMS.single["Key card"].ITEMPICKUP
-}
-workspace.Remote.ItemHandler:InvokeServer(unpack(args))
-if not workspace.Prison_ITEMS.single["Key card"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/du3ko/scripts/master/key%20card%20spammer"))()
-end
-end
