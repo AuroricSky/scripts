@@ -1,0 +1,8 @@
+while wait(.1) do
+local args = {
+    [1] = workspace.Prison_ITEMS.single["Key card"].ITEMPICKUP
+}
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+if not workspace.Prison_ITEMS.single["Key card"] then
+loadstring(game:HttpGet(""))()
+end
